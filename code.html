@@ -1,0 +1,550 @@
+<!DOCTYPE html><html class="light" lang="az"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<title>YourDeal - Təsdiqlənmiş Xidmət və Təklif Portalı</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #fafaf5;
+        color: #162623;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        letter-spacing: -0.011em;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "canvas": "#fafaf5",
+            "canvas-alt": "#f4f3ec",
+            "pine-dark": "#122521",
+            "pine-medium": "#1c3832",
+            "pine-soft": "#285449",
+            "sage-subtle": "#eaf1ec",
+            "sage-light": "#d8e5dd",
+            "warm-border": "#e7e5dc",
+            "warm-card": "#ffffff",
+            "warm-muted": "#6a7674"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"]
+          },
+          boxShadow: {
+            "subtle": "0 2px 8px -2px rgba(18, 37, 33, 0.04), 0 8px 24px -4px rgba(18, 37, 33, 0.04)",
+            "lifted": "0 16px 36px -8px rgba(18, 37, 33, 0.07)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-canvas font-sans text-pine-dark antialiased selection:bg-sage-light selection:text-pine-dark">
+<!-- TOP HEADER -->
+<header class="fixed top-0 w-full z-50 bg-[#fafaf5]/90 backdrop-blur-md border-b border-warm-border/80 transition-all">
+<div class="h-20 max-w-[1240px] mx-auto px-5 sm:px-8 flex items-center justify-between gap-6">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-2.5 group" href="#"><img src="https://lh3.googleusercontent.com/aida/ALJJyrBWv1kQy0wFgFNMsV8ehZ1KgrGYGoKHRBR_Q4vQTaN8_6slK_bXB5T-d5aNl1WTVKHAdpi5_hspjDCt3Cy5B70OrKCiO2oJXcrFVLCVXvonBf7hVWX8AeiWT3Ozt50IqTbUQu2Vq4zKk9UmqubJ2EFqIKIFbP2k7NSa2JHyyXtxpJyL_2uT6vStnvF0FVjkr6Fq4g5_d7q28E0IY0-l9qrFoZI_HFcJSBbRPuycTyIv" alt="YourDeal Logo" class="w-8 h-8 rounded-full object-cover"><span class="font-semibold text-lg tracking-tight text-pine-dark">Your<span class="text-pine-soft font-normal">Deal</span></span></a>
+<!-- Quick Category Hover Pill in Header -->
+<div class="relative group hidden lg:block">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-canvas-alt text-pine-dark text-xs font-medium hover:bg-warm-border/70 transition-colors border border-warm-border">
+<span class="material-symbols-outlined text-[17px] text-pine-soft">grid_view</span>
+<span>Kateqoriyalar</span>
+<span class="material-symbols-outlined text-[15px] text-warm-muted group-hover:rotate-180 transition-transform">expand_more</span>
+</button>
+<div class="absolute left-0 top-full pt-3 w-[460px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out z-50">
+<div class="bg-white rounded-2xl p-4 shadow-lifted border border-warm-border grid grid-cols-2 gap-2 text-xs">
+<a class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-canvas transition-colors font-medium text-pine-dark" href="#directory">
+<span class="material-symbols-outlined text-[18px] text-pine-soft">construction</span>
+<span>Tikinti və təmir</span>
+</a>
+<a class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-canvas transition-colors font-medium text-pine-dark" href="#directory">
+<span class="material-symbols-outlined text-[18px] text-pine-soft">cleaning_services</span>
+<span>Təmizlik xidməti</span>
+</a>
+<a class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-canvas transition-colors font-medium text-pine-dark" href="#directory">
+<span class="material-symbols-outlined text-[18px] text-pine-soft">local_shipping</span>
+<span>Daşınma və köç</span>
+</a>
+<a class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-canvas transition-colors font-medium text-pine-dark" href="#directory">
+<span class="material-symbols-outlined text-[18px] text-pine-soft">yard</span>
+<span>Həyət və bağ</span>
+</a>
+<a class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-canvas transition-colors font-medium text-pine-dark" href="#directory">
+<span class="material-symbols-outlined text-[18px] text-pine-soft">chair</span>
+<span>Daxili interyer</span>
+</a>
+<a class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-canvas transition-colors font-medium text-pine-dark" href="#directory">
+<span class="material-symbols-outlined text-[18px] text-pine-soft">developer_mode</span>
+<span>IT və digər</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Center Nav Links -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-warm-muted hover:text-pine-dark transition-colors" href="#directory">Xidmətlər</a>
+<a class="text-sm font-medium text-warm-muted hover:text-pine-dark transition-colors" href="#how-it-works">Necə işləyir?</a>
+<a class="text-sm font-medium text-warm-muted hover:text-pine-dark transition-colors" href="#comparison">Təkliflər</a>
+<a class="text-sm font-medium text-warm-muted hover:text-pine-dark transition-colors" href="#pro-section">Mütəxəssislər</a>
+</nav>
+<!-- Right Actions -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-block px-3.5 py-2 text-sm font-medium text-warm-muted hover:text-pine-dark transition-colors" href="#">Daxil ol</a>
+<a class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-pine-dark text-white hover:bg-pine-soft font-medium text-sm transition-all" href="#quick-request">
+<span>Müraciət yerləşdir</span>
+<span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full pt-20">
+<!-- HERO SECTION -->
+<section class="max-w-[1240px] mx-auto px-5 sm:px-8 pt-8 pb-14">
+<div class="bg-canvas-alt rounded-3xl p-6 sm:p-10 lg:p-12 border border-warm-border relative overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Hero Left Column -->
+<div class="lg:col-span-7 flex flex-col">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-pine-soft border border-warm-border text-xs font-medium w-fit mb-5 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-pine-soft"></span>
+<span>İsveç standartı ilə rahat və şəffaf xidmət</span>
+</div>
+<h1 class="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-pine-dark leading-[1.2] tracking-tight mb-4">
+            Eviniz və layihələriniz üçün <br class="hidden sm:inline">
+<span class="text-pine-soft font-medium">etibarlı mütəxəssislər</span>
+</h1>
+<p class="text-sm sm:text-base text-warm-muted leading-relaxed max-w-lg mb-8 font-normal">
+            Xidmət tələbinizi bildirin, yoxlanılmış yerli ustalardan pulsuz qiymət təklifləri alın.
+          </p>
+<!-- Concise Search Form -->
+<div class="bg-white rounded-2xl p-2.5 sm:p-3 shadow-subtle border border-warm-border" id="quick-request">
+<form class="flex flex-col sm:flex-row items-stretch gap-2" onsubmit="event.preventDefault();">
+<div class="flex-1 bg-canvas rounded-xl px-3.5 py-2.5 flex items-center gap-2.5 border border-warm-border/70 hover:border-warm-muted/40 transition-colors">
+<span class="material-symbols-outlined text-pine-soft text-[20px]">category</span>
+<div class="flex-1 min-w-0">
+<span class="block text-[10px] font-medium text-warm-muted uppercase tracking-wider">Kateqoriya</span>
+<select class="w-full bg-transparent text-xs sm:text-sm font-medium text-pine-dark outline-none cursor-pointer truncate p-0 border-0 focus:ring-0">
+<option>Mənzil və ev təmiri</option>
+<option>Təmizlik xidməti</option>
+<option>Yükdaşıma və köç</option>
+<option>Həyət və bağ</option>
+<option>Daxili dizayn</option>
+</select>
+</div>
+</div>
+<div class="flex-1 bg-canvas rounded-xl px-3.5 py-2.5 flex items-center gap-2.5 border border-warm-border/70 hover:border-warm-muted/40 transition-colors">
+<span class="material-symbols-outlined text-warm-muted text-[20px]">location_on</span>
+<div class="flex-1 min-w-0">
+<span class="block text-[10px] font-medium text-warm-muted uppercase tracking-wider">Ərazi</span>
+<select class="w-full bg-transparent text-xs sm:text-sm font-medium text-pine-dark outline-none cursor-pointer truncate p-0 border-0 focus:ring-0">
+<option>Bakı</option>
+<option>Sumqayıt</option>
+<option>Abşeron</option>
+<option>Gəncə</option>
+</select>
+</div>
+</div>
+<button class="bg-pine-dark hover:bg-pine-soft text-white px-5 py-3 rounded-xl font-medium text-xs sm:text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer flex-shrink-0" type="button">
+<span>Təklif al</span>
+<span class="material-symbols-outlined text-[17px]">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Trust Badges -->
+<div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-6 text-xs text-warm-muted">
+<div class="flex items-center gap-1.5 text-pine-dark font-medium">
+<span class="material-symbols-outlined text-amber-600 text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9 / 5 <span class="text-warm-muted font-normal">(48,000+ rəy)</span></span>
+</div>
+<div class="flex items-center gap-1.5 text-pine-dark font-medium">
+<span class="material-symbols-outlined text-pine-soft text-[16px]">verified</span>
+<span>Yoxlanılmış ustalar</span>
+</div>
+<div class="flex items-center gap-1.5 text-pine-soft font-medium">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+<span>100% pulsuz</span>
+</div>
+</div>
+</div>
+<!-- Hero Photography -->
+<div class="lg:col-span-5 relative flex justify-center">
+<div class="relative w-full max-w-[430px] aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden shadow-subtle border border-warm-border bg-white">
+<img class="w-full h-full object-cover" data-alt="Modern Scandinavian minimalist apartment living room with contemporary cream sofa, green velvet throw pillows, light wooden coffee table with fresh eucalyptus in ceramic vase, architectural house plants, framed abstract wall art and abundant natural sunlight in Baku interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCen09hMMnYqlKhO3PnQRFBymce7DgbcxBfLAOdqVdOOIASnrlgEKsGsSt_xzzt689WIHdSRCgzu7GHQ8Y3fDTAqA9cjcSAqMA03o9ACfYrq1wUNA-bADYV6nsjFbPfDQLm20zjmS-pSYBleJqmwBKKz4Y1-T6Dmp9_G8dKtDmcIfVAVYEkDsMaEBfOsgVW8puWpJNVdm1JK_McqB14tZCaj2GHbhc1SRm7b_CkNGs">
+<div class="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md rounded-xl p-3 shadow-sm border border-warm-border/80 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-sage-subtle flex items-center justify-center text-pine-soft flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-pine-dark">VÖEN &amp; Təcrübə auditli</div>
+<div class="text-[11px] text-warm-muted">Təsdiqlənmiş peşəkarlar</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-sage-subtle text-pine-soft text-[10px] font-semibold">Təsdiqli</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICE CATEGORIES -->
+<section class="max-w-[1240px] mx-auto px-5 sm:px-8 py-8" id="categories">
+<div class="flex items-baseline justify-between mb-6">
+<div>
+<h2 class="text-xl sm:text-2xl font-semibold text-pine-dark tracking-tight">Kateqoriyalar</h2>
+</div>
+<span class="text-xs text-warm-muted">1,400+ gündəlik müraciət</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+<!-- 1. Tikinti və təmir -->
+<a class="group bg-white rounded-xl p-3.5 flex flex-col items-center text-center border border-warm-border hover:border-pine-soft/40 hover:shadow-subtle transition-all" href="#directory">
+<div class="w-11 h-11 rounded-xl bg-canvas flex items-center justify-center text-pine-dark group-hover:bg-sage-subtle group-hover:text-pine-soft mb-2.5 transition-colors">
+<span class="material-symbols-outlined text-[22px]">construction</span>
+</div>
+<h3 class="text-xs font-semibold text-pine-dark group-hover:text-pine-soft">Tikinti və təmir</h3>
+<span class="mt-1 text-[11px] text-warm-muted">120+ usta</span>
+</a>
+<!-- 2. Təmizlik -->
+<a class="group bg-white rounded-xl p-3.5 flex flex-col items-center text-center border border-warm-border hover:border-pine-soft/40 hover:shadow-subtle transition-all" href="#directory">
+<div class="w-11 h-11 rounded-xl bg-canvas flex items-center justify-center text-pine-dark group-hover:bg-sage-subtle group-hover:text-pine-soft mb-2.5 transition-colors">
+<span class="material-symbols-outlined text-[22px]">cleaning_services</span>
+</div>
+<h3 class="text-xs font-semibold text-pine-dark group-hover:text-pine-soft">Təmizlik</h3>
+<span class="mt-1 text-[11px] text-warm-muted">85 şirkət</span>
+</a>
+<!-- 3. Daşınma -->
+<a class="group bg-white rounded-xl p-3.5 flex flex-col items-center text-center border border-warm-border hover:border-pine-soft/40 hover:shadow-subtle transition-all" href="#directory">
+<div class="w-11 h-11 rounded-xl bg-canvas flex items-center justify-center text-pine-dark group-hover:bg-sage-subtle group-hover:text-pine-soft mb-2.5 transition-colors">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</div>
+<h3 class="text-xs font-semibold text-pine-dark group-hover:text-pine-soft">Daşınma</h3>
+<span class="mt-1 text-[11px] text-warm-muted">60 komanda</span>
+</a>
+<!-- 4. Həyət və bağ -->
+<a class="group bg-white rounded-xl p-3.5 flex flex-col items-center text-center border border-warm-border hover:border-pine-soft/40 hover:shadow-subtle transition-all" href="#directory">
+<div class="w-11 h-11 rounded-xl bg-canvas flex items-center justify-center text-pine-dark group-hover:bg-sage-subtle group-hover:text-pine-soft mb-2.5 transition-colors">
+<span class="material-symbols-outlined text-[22px]">yard</span>
+</div>
+<h3 class="text-xs font-semibold text-pine-dark group-hover:text-pine-soft">Həyət və bağ</h3>
+<span class="mt-1 text-[11px] text-warm-muted">40 bağban</span>
+</a>
+<!-- 5. Ev və interyer -->
+<a class="group bg-white rounded-xl p-3.5 flex flex-col items-center text-center border border-warm-border hover:border-pine-soft/40 hover:shadow-subtle transition-all" href="#directory">
+<div class="w-11 h-11 rounded-xl bg-canvas flex items-center justify-center text-pine-dark group-hover:bg-sage-subtle group-hover:text-pine-soft mb-2.5 transition-colors">
+<span class="material-symbols-outlined text-[22px]">chair</span>
+</div>
+<h3 class="text-xs font-semibold text-pine-dark group-hover:text-pine-soft">Daxili dizayn</h3>
+<span class="mt-1 text-[11px] text-warm-muted">50 dizayner</span>
+</a>
+<!-- 6. Santexnik və qaz -->
+<a class="group bg-white rounded-xl p-3.5 flex flex-col items-center text-center border border-warm-border hover:border-pine-soft/40 hover:shadow-subtle transition-all" href="#directory">
+<div class="w-11 h-11 rounded-xl bg-canvas flex items-center justify-center text-pine-dark group-hover:bg-sage-subtle group-hover:text-pine-soft mb-2.5 transition-colors">
+<span class="material-symbols-outlined text-[22px]">plumbing</span>
+</div>
+<h3 class="text-xs font-semibold text-pine-dark group-hover:text-pine-soft">Santexnik</h3>
+<span class="mt-1 text-[11px] text-warm-muted">90 mütəxəssis</span>
+</a>
+<!-- 7. Elektrik -->
+<a class="group bg-white rounded-xl p-3.5 flex flex-col items-center text-center border border-warm-border hover:border-pine-soft/40 hover:shadow-subtle transition-all" href="#directory">
+<div class="w-11 h-11 rounded-xl bg-canvas flex items-center justify-center text-pine-dark group-hover:bg-sage-subtle group-hover:text-pine-soft mb-2.5 transition-colors">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+<h3 class="text-xs font-semibold text-pine-dark group-hover:text-pine-soft">Elektrik</h3>
+<span class="mt-1 text-[11px] text-warm-muted">70 usta</span>
+</a>
+<!-- 8. Digər -->
+<a class="group bg-white rounded-xl p-3.5 flex flex-col items-center text-center border border-warm-border hover:border-pine-soft/40 hover:shadow-subtle transition-all" href="#directory">
+<div class="w-11 h-11 rounded-xl bg-canvas flex items-center justify-center text-pine-dark group-hover:bg-sage-subtle group-hover:text-pine-soft mb-2.5 transition-colors">
+<span class="material-symbols-outlined text-[22px]">more_horiz</span>
+</div>
+<h3 class="text-xs font-semibold text-pine-dark group-hover:text-pine-soft">Digər</h3>
+<span class="mt-1 text-[11px] text-warm-muted">Bütün sahələr</span>
+</a>
+</div>
+</section>
+<!-- HOW IT WORKS -->
+<section class="max-w-[1240px] mx-auto px-5 sm:px-8 py-10" id="how-it-works">
+<div class="bg-white rounded-3xl p-7 sm:p-10 border border-warm-border">
+<div class="text-center max-w-md mx-auto mb-10">
+<h2 class="text-xl sm:text-2xl font-semibold text-pine-dark tracking-tight">Necə işləyir?</h2>
+<p class="text-xs sm:text-sm text-warm-muted mt-1.5">3 sadə addımda xidmət sifarişi</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Step 1 -->
+<div class="bg-canvas rounded-2xl p-5 border border-warm-border/60">
+<span class="w-8 h-8 rounded-lg bg-sage-subtle text-pine-soft font-semibold text-sm flex items-center justify-center mb-3">1</span>
+<h3 class="text-sm font-semibold text-pine-dark mb-1">Müraciət yerləşdirin</h3>
+<p class="text-xs text-warm-muted leading-relaxed">
+            Ehtiyacınızı qısa qeyd edin və pulsuz dərc edin.
+          </p>
+</div>
+<!-- Step 2 -->
+<div class="bg-canvas rounded-2xl p-5 border border-warm-border/60">
+<span class="w-8 h-8 rounded-lg bg-sage-subtle text-pine-soft font-semibold text-sm flex items-center justify-center mb-3">2</span>
+<h3 class="text-sm font-semibold text-pine-dark mb-1">Təklifləri müqayisə edin</h3>
+<p class="text-xs text-warm-muted leading-relaxed">
+            Gələn smetaları, rəyləri və zəmanət şərtlərini nəzərdən keçirin.
+          </p>
+</div>
+<!-- Step 3 -->
+<div class="bg-canvas rounded-2xl p-5 border border-warm-border/60">
+<span class="w-8 h-8 rounded-lg bg-sage-subtle text-pine-soft font-semibold text-sm flex items-center justify-center mb-3">3</span>
+<h3 class="text-sm font-semibold text-pine-dark mb-1">Ən yaxşısını seçin</h3>
+<p class="text-xs text-warm-muted leading-relaxed">
+            Münasib usta ilə razılaşın və layihəni başladın.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- LIVE COMPARISON DASHBOARD -->
+<section class="max-w-[1240px] mx-auto px-5 sm:px-8 py-8" id="comparison">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Info -->
+<div class="lg:col-span-4 flex flex-col pt-2">
+<h2 class="text-xl sm:text-2xl font-semibold text-pine-dark tracking-tight leading-snug mb-2">
+          Şəffaf və rəqabətli təkliflər
+        </h2>
+<p class="text-xs sm:text-sm text-warm-muted leading-relaxed mb-6 font-normal">
+          Eyni iş üzrə bir neçə smeta alaraq büdcənizə və reytinqə uyğun olanı rahatlıqla seçin.
+        </p>
+<div class="space-y-2.5">
+<div class="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-warm-border">
+<span class="material-symbols-outlined text-pine-soft text-[18px]">verified</span>
+<span class="text-xs font-medium text-pine-dark">Sabit qiymət, gizli xərclər yoxdur</span>
+</div>
+<div class="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-warm-border">
+<span class="material-symbols-outlined text-pine-soft text-[18px]">security</span>
+<span class="text-xs font-medium text-pine-dark">Zəmanətli və təhlükəsiz xidmət</span>
+</div>
+</div>
+</div>
+<!-- Right Live Offers Preview -->
+<div class="lg:col-span-8 bg-white rounded-2xl p-5 sm:p-6 border border-warm-border shadow-subtle">
+<div class="flex items-center justify-between gap-2 p-3 rounded-xl bg-canvas border border-warm-border/60 mb-3.5">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-sage-subtle text-pine-soft text-[10px] font-semibold">Sorğu #UB-8421</span>
+<span class="text-[11px] text-warm-muted">14 dəqiqə əvvəl</span>
+</div>
+<div class="text-xs sm:text-sm font-semibold text-pine-dark mt-1">3 otaqlı mənzilin təmiri (85 m²)</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-white text-pine-soft border border-warm-border text-xs font-medium">
+            3 təklif
+          </span>
+</div>
+<div class="space-y-2.5">
+<!-- Offer 1 -->
+<div class="p-3.5 rounded-xl bg-canvas hover:bg-canvas-alt border border-warm-border/70 flex items-center justify-between gap-4 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-pine-dark text-white font-medium text-xs flex items-center justify-center flex-shrink-0">
+                MB
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-pine-dark">MasterBuild MMC</span>
+<span class="px-1.5 py-0.2 rounded bg-sage-subtle text-pine-soft text-[10px] font-medium">Tövsiyə</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-[11px] text-warm-muted">
+<span class="text-amber-600 font-semibold">★ 4.9</span>
+<span>•</span>
+<span>128 iş</span>
+<span>•</span>
+<span>1 il zəmanət</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold text-pine-dark">4,200 AZN</span>
+<button class="px-3 py-1.5 rounded-lg bg-pine-dark text-white hover:bg-pine-soft text-xs font-medium transition-colors" type="button">
+                Seç
+              </button>
+</div>
+</div>
+<!-- Offer 2 -->
+<div class="p-3.5 rounded-xl bg-canvas hover:bg-canvas-alt border border-warm-border/70 flex items-center justify-between gap-4 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-warm-border text-pine-dark font-medium text-xs flex items-center justify-center flex-shrink-0">
+                EI
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-pine-dark">Elite Dizayn</span>
+<span class="px-1.5 py-0.2 rounded bg-canvas text-warm-muted border border-warm-border text-[10px] font-medium">Dizaynlı</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-[11px] text-warm-muted">
+<span class="text-amber-600 font-semibold">★ 5.0</span>
+<span>•</span>
+<span>94 rəy</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold text-pine-dark">4,500 AZN</span>
+<button class="px-3 py-1.5 rounded-lg bg-white border border-warm-border text-pine-dark hover:bg-canvas text-xs font-medium transition-colors" type="button">
+                Bax
+              </button>
+</div>
+</div>
+<!-- Offer 3 -->
+<div class="p-3.5 rounded-xl bg-canvas hover:bg-canvas-alt border border-warm-border/70 flex items-center justify-between gap-4 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-warm-border text-pine-dark font-medium text-xs flex items-center justify-center flex-shrink-0">
+                UR
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-pine-dark">Usta Rəşad</span>
+<span class="px-1.5 py-0.2 rounded bg-sage-subtle text-pine-soft text-[10px] font-medium">Sərfəli</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-[11px] text-warm-muted">
+<span class="text-amber-600 font-semibold">★ 4.8</span>
+<span>•</span>
+<span>42 rəy</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold text-pine-soft">3,800 AZN</span>
+<button class="px-3 py-1.5 rounded-lg bg-white border border-warm-border text-pine-dark hover:bg-canvas text-xs font-medium transition-colors" type="button">
+                Bax
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- REFINED DIRECTORY (Minimal & Clean, No long exhaustive lists) -->
+<section class="max-w-[1240px] mx-auto px-5 sm:px-8 py-8" id="directory">
+<div class="flex items-baseline justify-between mb-6">
+<h2 class="text-xl sm:text-2xl font-semibold text-pine-dark tracking-tight">Əsas xidmətlər</h2>
+<a class="text-xs font-medium text-pine-soft hover:underline" href="#">Hamısına bax</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Card 1 -->
+<div class="bg-white rounded-2xl p-5 border border-warm-border hover:shadow-subtle transition-all">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-9 h-9 rounded-lg bg-sage-subtle text-pine-soft flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">construction</span>
+</div>
+<div>
+<h3 class="text-sm font-semibold text-pine-dark">Tikinti və təmir</h3>
+<span class="text-xs text-warm-muted">Ev və ofis üçün</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-2">
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Santexnik</span>
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Elektrik</span>
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Kafel və metlax</span>
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Rəngsaz</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-2xl p-5 border border-warm-border hover:shadow-subtle transition-all">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-9 h-9 rounded-lg bg-sage-subtle text-pine-soft flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">cleaning_services</span>
+</div>
+<div>
+<h3 class="text-sm font-semibold text-pine-dark">Təmizlik xidməti</h3>
+<span class="text-xs text-warm-muted">Gündəlik və əsaslı</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-2">
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Ev təmizliyi</span>
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Təmir sonrası</span>
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Pəncərə yuma</span>
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Xalça yuma</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-2xl p-5 border border-warm-border hover:shadow-subtle transition-all">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-9 h-9 rounded-lg bg-sage-subtle text-pine-soft flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div>
+<h3 class="text-sm font-semibold text-pine-dark">Daşınma və köç</h3>
+<span class="text-xs text-warm-muted">Təhlükəsiz nəqliyyat</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-2">
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Mənzil köçü</span>
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Yük maşını</span>
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Mebel sökülməsi</span>
+<span class="px-2.5 py-1 rounded-lg bg-canvas text-pine-dark text-xs font-medium border border-warm-border/60">Fəhlə</span>
+</div>
+</div>
+</div>
+</section>
+<!-- COMPACT TESTIMONIALS -->
+<section class="max-w-[1240px] mx-auto px-5 sm:px-8 py-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="bg-white rounded-2xl p-5 border border-warm-border">
+<div class="flex items-center gap-1 text-amber-600 text-xs mb-2">★★★★★</div>
+<p class="text-xs sm:text-sm text-pine-dark leading-relaxed mb-3">
+          "Santexnik üçün müraciət yerləşdirdim, 20 dəqiqəyə bir neçə smeta aldım. Hər şey vaxtında və razılaşdırılan qiymətə tamamlandı."
+        </p>
+<div class="text-xs font-semibold text-pine-dark">Fərid Həsənov <span class="text-warm-muted font-normal">• Yasamal</span></div>
+</div>
+<div class="bg-white rounded-2xl p-5 border border-warm-border">
+<div class="flex items-center gap-1 text-amber-600 text-xs mb-2">★★★★★</div>
+<p class="text-xs sm:text-sm text-pine-dark leading-relaxed mb-3">
+          "Ofis köçürülməsində 3 təklifi müqayisə edib ən sərfəlisini seçdik. Çox operativ və peşəkar iş gördülər."
+        </p>
+<div class="text-xs font-semibold text-pine-dark">Leyla Məmmədova <span class="text-warm-muted font-normal">• Nərimanov</span></div>
+</div>
+</div>
+</section>
+<!-- CTA BANNER -->
+<section class="max-w-[1240px] mx-auto px-5 sm:px-8 py-8" id="pro-section">
+<div class="bg-pine-dark rounded-3xl p-7 sm:p-10 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="text-center sm:text-left">
+<h2 class="text-lg sm:text-xl font-semibold tracking-tight text-white mb-1.5">
+          Eviniz üçün usta axtarırsınız, yoxsa peşəkarsınız?
+        </h2>
+<p class="text-xs sm:text-sm text-sage-light/80">
+          Pulsuz müraciət yerləşdirin və ya usta kimi qeydiyyatdan keçin.
+        </p>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0">
+<a class="px-4 py-2.5 rounded-xl bg-white text-pine-dark hover:bg-canvas text-xs font-medium transition-colors" href="#quick-request">
+          Müraciət et
+        </a>
+<a class="px-4 py-2.5 rounded-xl bg-pine-soft hover:bg-pine-soft/90 text-white text-xs font-medium transition-colors" href="#">
+          Usta kimi qoşul
+        </a>
+</div>
+</div>
+</section>
+</main>
+<!-- MINIMAL FOOTER -->
+<footer class="w-full bg-canvas-alt text-pine-dark border-t border-warm-border mt-6 py-8">
+<div class="max-w-[1240px] mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-warm-muted">
+<div class="flex items-center gap-2"><img src="https://lh3.googleusercontent.com/aida/ALJJyrBWv1kQy0wFgFNMsV8ehZ1KgrGYGoKHRBR_Q4vQTaN8_6slK_bXB5T-d5aNl1WTVKHAdpi5_hspjDCt3Cy5B70OrKCiO2oJXcrFVLCVXvonBf7hVWX8AeiWT3Ozt50IqTbUQu2Vq4zKk9UmqubJ2EFqIKIFbP2k7NSa2JHyyXtxpJyL_2uT6vStnvF0FVjkr6Fq4g5_d7q28E0IY0-l9qrFoZI_HFcJSBbRPuycTyIv" alt="YourDeal Logo" class="w-6 h-6 rounded-full object-cover"><span class="font-medium text-pine-dark">YourDeal</span><span>© 2025 Bütün hüquqlar qorunur.</span></div>
+<div class="flex items-center gap-5">
+<a class="hover:text-pine-dark transition-colors" href="#">Qaydalar</a>
+<a class="hover:text-pine-dark transition-colors" href="#">Məxfilik</a>
+<a class="hover:text-pine-dark transition-colors" href="#">Əlaqə</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>
